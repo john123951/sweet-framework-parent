@@ -1,5 +1,7 @@
 package sweet.framework.service;
 
+import sweet.framework.service.dto.UserDto;
+
 import java.util.Date;
 
 /**
@@ -8,4 +10,6 @@ import java.util.Date;
 
 public interface IUserService {
     Date getTime();
+
+    UserDto getUserById(Long userId);
 }
