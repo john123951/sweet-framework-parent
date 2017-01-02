@@ -4,7 +4,9 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <!--<classPathEntry            location="/home/sweet/.m2/repository/mysql/mysql-connector-java/6.0.5/mysql-connector-java-6.0.5.jar"/>-->
+    <!--mybatis-generator:generate-->
+
+    <!--<classPathEntry location="/home/sweet/.m2/repository/mysql/mysql-connector-java/6.0.5/mysql-connector-java-6.0.5.jar"/>-->
 
     <context id="MysqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
         <property name="beginningDelimiter" value="`"/>
@@ -49,9 +51,18 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="sweet.framework.repository.dao"
                              targetProject="src/main/java"/>
 
-        <table tableName="User">
-            <!--<generatedKey column="id" sqlStatement="Mysql"/>-->
+        <table tableName="User"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
         </table>
+
+        <!--<table tableName="%"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false" >-->
+            <!--&lt;!&ndash;<generatedKey column="id" sqlStatement="Mysql"/>&ndash;&gt;-->
+        <!--</table>-->
 
         <!--<table schema="DB2ADMIN" tableName="ALLTYPES" domainObjectName="Customer">-->
         <!--<property name="useActualColumnNames" value="true"/>-->
