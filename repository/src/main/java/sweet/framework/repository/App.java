@@ -1,4 +1,4 @@
-package sweet.framework.service;
+package sweet.framework.repository;
 
 /**
  * Hello world!

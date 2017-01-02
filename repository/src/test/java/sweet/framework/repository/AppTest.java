@@ -1,4 +1,4 @@
-package sweet.framework.service;
+package sweet.framework.repository;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

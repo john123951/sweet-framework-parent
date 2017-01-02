@@ -23,6 +23,7 @@
         <java.version>1.8</java.version>
 
         <aspectj.version>1.8.9</aspectj.version>
+        <mybatis.version>3.4.1</mybatis.version>
         <spring.framework.version>4.3.4.RELEASE</spring.framework.version>
         <spring.boot.version>1.4.2.RELEASE</spring.boot.version>
         <junit.version>3.8.1</junit.version>
@@ -49,6 +50,12 @@
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjweaver</artifactId>
                 <version>${aspectj.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
             </dependency>
 
             <dependency>
