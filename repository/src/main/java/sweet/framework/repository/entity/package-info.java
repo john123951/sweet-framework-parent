@@ -1,1 +1,0 @@
-package sweet.framework.repository.entity;
