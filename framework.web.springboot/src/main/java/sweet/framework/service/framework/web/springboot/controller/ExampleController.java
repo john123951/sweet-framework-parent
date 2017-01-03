@@ -28,4 +28,11 @@ public class ExampleController {
         return userService.getTime().toString();
     }
 
+
+    @RequestMapping("/db")
+    public String db() {
+        return userService.getUserById(1L).toString();
+    }
+
+
 }
