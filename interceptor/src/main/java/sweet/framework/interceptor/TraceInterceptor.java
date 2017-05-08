@@ -3,6 +3,7 @@ package sweet.framework.interceptor;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
@@ -10,12 +11,21 @@ import org.springframework.util.StopWatch;
  * Trace 拦截器
  * 打印方法名，执行时间
  * 使用方法：
- *      在需要的类上加 @Trace 注解
+ * 在需要的类上加 @Trace 注解
  */
 @Aspect
 @Component
 public class TraceInterceptor {
 
+    //@Pointcut("execution(* sweet.framework..*.*(..))")
+    //private void isBusiness() {
+    //}
+    //
+    //@Pointcut("@within(sweet.framework.interceptor.annotation.Trace)")
+    //private void hasAnnotation() {
+    //}
+
+    //@Around("isBusiness() && hasAnnotation()")
     //@Around("@annotation(sweet.framework.interceptor.annotation.Trace)")
     //@Around("execution(public * *(..))")
     @Around("@within(sweet.framework.interceptor.annotation.Trace)")
