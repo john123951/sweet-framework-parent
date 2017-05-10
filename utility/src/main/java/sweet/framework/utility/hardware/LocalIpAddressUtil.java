@@ -7,6 +7,7 @@ import java.net.SocketException;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 /**
  * 获取本地ip的工具
@@ -45,6 +46,27 @@ public final class LocalIpAddressUtil {
         for (InetAddress addr : addresses)
             ret.add(addr.getHostAddress());
         return ret;
+    }
+
+    public static int parseIp(String address) {
+        int result = 0;
+
+        // iterate over each octet
+        for (String part : address.split(Pattern.quote("."))) {
+            // shift the previously parsed bits over by 1 byte
+            result = result << 8;
+            // set the low order bits to the current octet
+            result |= Integer.parseInt(part);
+        }
+        return result;
+    }
+
+    public static int parseIp(InetAddress inetAddress) {
+        int result = 0;
+        for (byte b : inetAddress.getAddress()) {
+            result = result << 8 | (b & 0xFF);
+        }
+        return result;
     }
 
     private static boolean isSpecialIp(String ip) {
